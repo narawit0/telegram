@@ -90,7 +90,9 @@ class CommandBus extends AnswerBus
         if (empty($aliases)) {
             return $this;
         }
-
+	
+	    $this->commandAliases = [];
+        
         foreach ($command->getAliases() as $alias) {
             $this->checkForConflicts($command, $alias);
 
